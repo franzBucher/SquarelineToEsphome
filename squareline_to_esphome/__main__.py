@@ -64,6 +64,7 @@ STYLE_PROPERTY_MAP = {
     "_style/Bg_Image_Tiled": lambda v: {
         "bg_image_tiled": v["strval"].lower() == "true"
     },
+
     # Border styles
     "_style/Border_Color": lambda v: color_opa("border_color", "border_opa", v),
     "_style/Border width": lambda v: {"border_width": v.get("integer", 0)},
@@ -125,6 +126,7 @@ STYLE_PROPERTY_MAP = {
     "_style/Arc_Color": lambda v: color_opa("arc_color", "arc_opa", v),
     # Blend styles
     "_style/Blend_Mode": lambda v: {"blend_mode": v["strval"].lower()},
+    "_style/Blend_opacity": lambda v: {"opa": v["integer"]},
     # Transform styles
     "_style/Transform_Width": lambda v: {"transform_width": v["integer"]},
     "_style/Transform_Height": lambda v: {"transform_height": v["integer"]},
