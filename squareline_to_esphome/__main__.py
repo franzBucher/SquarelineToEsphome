@@ -235,6 +235,14 @@ def style_parser(node: dict, yaml_root_key: str, images: dict) -> dict:
     """Parse style properties from a node and return a dictionary of style properties"""
     return base_style_parser(node, None, yaml_root_key, images)
 
+def indicator_style_parser(node: dict, yaml_root_key: str, images: dict) -> dict:
+    """Parse cursor properties from a node and return a dictionary of cursor properties"""
+    return base_style_parser(node, "indicator", yaml_root_key, images)
+
+def knob_style_parser(node: dict, yaml_root_key: str, images: dict) -> dict:
+    """Parse cursor properties from a node and return a dictionary of cursor properties"""
+    return base_style_parser(node, "knob", yaml_root_key, images)
+
 
 def cursor_style_parser(node: dict, yaml_root_key: str, images: dict) -> dict:
     """Parse cursor properties from a node and return a dictionary of cursor properties"""
@@ -338,7 +346,10 @@ PROP_MAP = {
     ),
     # Styles
     "ARC/Style_main": (None, style_parser),
+    "ARC/Style_indicator": (None, indicator_style_parser),
+    "ARC/Style_knob": (None, knob_style_parser),
     "BAR/Style_main": (None, style_parser),
+    "BAR/Style_indicator": (None, indicator_style_parser),
     "BUTTON/Style_main": (None, style_parser),
     "CONTAINER/Style_main": (None, style_parser),
     "DROPDOWN/Style_main": (None, style_parser),
